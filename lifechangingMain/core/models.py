@@ -47,11 +47,19 @@ class HowtoTrack(models.Model):
         return self.name
 
 class T_donor(models.Model):
-    td_howtocontact = models.ForeignKey(HowtoTrack,on_delete=models.CASCADE, null=True, blank=True)
+    CHOICES = (
+        ('select', 'Select'),
+        ('shoes', 'Shoes'),
+        ('clothes', 'Clothes'),
+        ('food items', 'Food Items'),
+    )
+    name = models.CharField(max_length=50, choices=CHOICES, default='select')
     td_name = models.CharField(max_length=100)
     td_contact = models.IntegerField( blank=True, null=True)
     td_location = models.CharField(max_length=100, blank=True, null=True)
     td_photo_logo = models.ImageField( blank=True, null=True)
+    td_item = models.CharField( max_length=50, choices=CHOICES, default='select')
+    td_description = models.TextField( blank=True, null=True)
 
     def _str_(self):
         return self.td_name
@@ -95,4 +103,4 @@ class clothRequest(models.Model):
         return f"Request for {self.item.name} by {self.requester.username}"
 
 
-## create forms for the models (frontend)
+## create forms for the models (fronten
