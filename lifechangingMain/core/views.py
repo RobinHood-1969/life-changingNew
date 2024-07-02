@@ -21,3 +21,6 @@ def donor(request):
     # else:
     #     form = T_donorForm()  
     # return render(request, 'donor.html', {'form': form}) 
+
+def about(request):
+    return render (request, 'about.html')
