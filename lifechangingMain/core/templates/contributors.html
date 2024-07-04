@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<div class="general-grid">
+  {% for item in t_contrib %}
+  <div class="thumbnail-preview">
+    <div class="thumbnail-row">
+      <img src="{% static 'images/anonymous.png' %}" class="pic-1">
+    </div>
+    <div class="uplift-info-grid">
+      <div class="chanel-pic">
+        <img class="profile" src="{{item.td_photo_logo.url}}">
+      </div>
+      <div class="uplift-info">
+        <p class="uplift-title">Item Category: {{item.td_item}}</p>
+        <p>Username: {{item.td_name}}</p>
+        <p>Item name: {{item.td_item_name}}</p>
+        <p class="uplift-stats">3.4M views | {{item.td_date}}</p>
+      </div>  
+    </div>
+  </div>
+  {% endfor %}
+  {% for group in p_contrib %}
+  <div class="thumbnail-preview">
+    <div class="thumbnail-row">
+      <img src="{% static 'images/wood.jpg' %}" class="pic-1">
+    </div>
+    <div class="uplift-info-grid">
+      <div class="chanel-pic">
+        <img class="profile" src="{{group.D_photo_logo.url}}">
+      </div>
+      <div class="uplift-info">
+        <p class="uplift-title">Item Category: {{group.D_item}}</p>
+        <p>Company name: {{group.D_name}}</p>
+        <p>Item name: {{group.D_item_name}}</p>
+        <p class="uplift-stats">3.4M views | {{group.D_date}}</p>
+      </div>  
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}
