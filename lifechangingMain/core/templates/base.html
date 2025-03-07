@@ -14,109 +14,38 @@
         <link rel="stylesheet" href="{% static "css/style.css" %}">
     </head>
     <body>
-        <header
-            style="background-color: white; box-shadow: 2px 5px 10px #d3d3d3"
-        >
-            <nav
-                style="
-                    padding: 5px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    flex-wrap: wrap;
-                "
-            >
-                <a href="http://">
-                    <img
-                        src="{% static 'images/Logopit_new.png' %}"
-                        style="width: 50%"
-                        alt=""
-                /></a>
-
-                <b>
-                    <ul
-                        style="
-                            list-style-type: none;
-                            display: inline-block;
-                            margin: 0;
-                            padding: 0;
-                            color: rgb(20, 138, 122);
-                            font-size: 16px;
-                        "
-                    >
-                        <li style="display: inline-block; margin-right: 10px">
-                            <a class="nav-link" href="/" target="_parent"
-                                >Home</a
-                            >
-                        </li>
-                        <li style="display: inline-block; margin-right: 10px">
-                            <a class="nav-link" href="/friends" target="_parent"
-                                >Friends in need</a
-                            >
-                        </li>
-                        <li style="display: inline-block; margin-right: 10px">
-                            <a
-                                class="nav-link"
-                                href="/contributors"
-                                target="_parent"
-                                >Contributors</a
-                            >
-                        </li>
-                        <li style="display: inline-block; margin-right: 10px">
-                            <a
-                                class="nav-link"
-                                href="friends.html"
-                                target="_parent"
-                                >Status</a
-                            >
-                        </li>
-                        <li
-                            class="dropdown"
-                            style="display: inline-block; margin-right: 10px"
-                        >
-                            <span>How it works</span>
+        <header>
+            <nav>
+                <div class="nav-container">
+                    <a href="/" class="logo-link"> 
+                        <img src="{% static 'images/Logopit_new.png' %}" alt="Logo" class="logo">
+                    </a>
+                    <button class="menu-toggle" aria-label="Toggle Navigation"> 
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="/">Home</a></li>
+                        <li><a class="nav-link" href="/friends">Friends in need</a></li>
+                        <li><a class="nav-link" href="/contributors">Contributors</a></li>
+                        <li><a class="nav-link" href="friends.html">Status</a></li>
+                        <li class="dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" >How it works</a>
                             <ul class="dropdown-content">
-                                <li><a href="/about"> About</a></li>
-                                <li><a href=""> Success stories</a></li>
-                                <li><a href=""> Major Donors</a></li>
+                                <li><a href="/about">About</a></li>
+                                <li><a href="#">Success stories</a></li>
+                                <li><a href="#">Major Donors</a></li>
                             </ul>
                         </li>
+        
+                        <li class="search-container">
+                           <form action="POST" class="search_form">
+                               <input type="search" placeholder="Search..." name="search">
+                                <button type="submit" class="search_button">
+                                  <i class="fa-solid fa-magnifying-glass"></i> </button>
+                            </form>
+                        </li>
                     </ul>
-                </b>
-
-                <form
-                    action="POST"
-                    class="search_form"
-                    style="
-                        display: flex;
-                        align-items: center;
-                        background-color: white;
-                        box-shadow: 2px 5px 10px #d3d3d3;
-                    "
-                >
-                    <input
-                        placeholder="search"
-                        style="
-                            height: 24px;
-                            font-size: 1rem;
-                            background: transparent;
-                            border: 0;
-                            outline: 0;
-                            margin: 5px 20px;
-                        "
-                    />
-                    <button
-                        class="search_button"
-                        style="
-                            height: 40px;
-                            width: 40px;
-                            border: 0;
-                            cursor: pointer;
-                        "
-                    >
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
+                </div>
             </nav>
         </header>
 
